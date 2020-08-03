@@ -52,6 +52,8 @@ class Dataset(InMemoryDataset):
 
             if mol.GetNumAtoms() == 1:
                 continue
+                
+            mol = Chem.AddHs(mol)
 
             try: #遇到特殊分子，无法生成特征的就跳过
 
